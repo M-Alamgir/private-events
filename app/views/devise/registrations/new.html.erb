@@ -9,7 +9,7 @@
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "focus:outline-none border-2 border-gray-200 py-1 px-2 rounded my-2" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "focus:outline-none border-2 border-gray-200 py-1 px-2 rounded my-2 w-full" %>
       </div>
 
       <div class="field">
@@ -17,12 +17,12 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "focus:outline-none border-2 border-gray-200 py-1 px-2 rounded my-2" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "focus:outline-none border-2 border-gray-200 py-1 px-2 rounded my-2 w-full" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "focus:outline-none border-2 border-gray-200 py-1 px-2 rounded my-2" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "focus:outline-none border-2 border-gray-200 py-1 px-2 rounded my-2 w-full" %>
       </div>
 
       <div class="actions">

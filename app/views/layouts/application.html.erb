@@ -27,20 +27,29 @@
             <a href="<%= root_path %>"><span class="font-bold text-gray-700 hover:text-gray-400 cursor-pointer">Private Events</span></a>
           </div>
           <div class="flex items-center text-gray-600">
-            <a href="#" class="py-5 px-4 hover:text-gray-400">Create event</a>
-            <a href="#" class="py-5 px-4 hover:text-gray-400">My events</a>
-            <a href="#" class="py-5 px-4 hover:text-gray-400">All events</a>
+            <a href="<%= new_event_path %>" class="py-5 px-4 hover:text-gray-400">Create event</a>
+            <a href="<%= event_events_path %>" class="py-5 px-4 hover:text-gray-400">My events</a>
+            <a href="<%= root_path %>" class="py-5 px-4 hover:text-gray-400">All events</a>
           </div>
         </div>
+        <% if !user_signed_in? %>
         <div class="flex items-center">
           <a href="<%= new_user_session_path %>" class="py-5 px-3 text-gray-600">Login</a>
           <a href="<%= new_user_registration_path %>" class="py-2 px-3 bg-yellow-500 hover:bg-yellow-300 rounded">Signup</a>
         </div>
+        <% else %>
+        <div class="flex items-center list-none">
+          <ul>
+          <li><%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "py-2 px-3 bg-yellow-500 hover:bg-yellow-300 rounded" %></li>  
+          </ul>
+        </div>
+        <% end %>
       </div>
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
   </body>
 </html>
