@@ -1,0 +1,60 @@
+<div class="absolute inset-x-0 shadow-xl bg-white md:w-4/5 mx-auto rounded-md border-t-8 border-yellow-400 mt-10 flex justify-center py-10">
+  <div class="text-gray-600 flex">
+  	<div>
+	    <h1 class="text-2xl font-sans font-light text-gray-500 px-4">My Hosted Events</h1>
+	    <table class="text-left m-4 bg-gray-lighter">
+	      <thead>
+	        <tr>
+	          <th class="py-4 text-gray uppercase">Title</th>
+	          <th class="py-4 px-10 text-gray uppercase">Date</th>
+	          <th class="py-4 px-10 text-gray uppercase">Location</th>
+	          <th colspan="3"></th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <% @user.created_events.each do |event| %>
+	          <tr class="border-b border-gray-400 bg-gray-100 font-mono">
+	            <td class="px-2"><%= event.title %></td>
+	            <td class="px-10"><%= event.time %></td>
+	            <td class="px-10 py-3"><%= event.location %></td>
+	            <td class="pl-10 pr-2"><li class="py-1 px-2 bg-yellow-400 rounded font-black list-none"><%= link_to 'Show', event %></li></td>
+	          </tr>
+	        <% end %>
+	      </tbody>
+	    </table>
+	</div>
+	<div>
+		<h1 class="text-2xl font-sans font-light text-gray-500 px-4">Events you are Attending</h1>
+    <table class="text-left m-4 bg-gray-lighter">
+      <tbody>
+      	<tr>
+        	<td class="py-3 font-mono text-green-500">
+        		Future events
+        	</td>
+        </tr>
+        <% @user.attend_events.future_events.each do |event| %>
+          <tr class="border-b border-gray-400 bg-gray-100 font-mono">
+            <td class="px-2"><%= event.title %></td>
+            <td class="px-6"><%= event.time %></td>
+            <td class="px-6 py-3"><%= event.location %></td>
+            <td class="pl-10 pr-2"><li class="py-1 px-2 bg-green-400 rounded font-black list-none text-white">Attending</li></td>
+          </tr>
+        <% end %>
+        <tr>
+        	<td class="py-3 font-mono text-green-500">
+        		past events
+        	</td>
+        </tr>
+        <% @user.attend_events.past_events.each do |event| %>
+          <tr class="border-b border-gray-400 bg-gray-100 font-mono">
+            <td class="px-2"><%= event.title %></td>
+            <td class="px-6"><%= event.time %></td>
+            <td class="px-6 py-3"><%= event.location %></td>
+            <td class="pl-10 pr-2"><li class="py-1 px-2 bg-gray-400 rounded font-black text-center list-none text-white">Attended</li></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+	</div>
+  </div>
+</div>

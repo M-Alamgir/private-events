@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update attend]
-
   # GET /events or /events.json
   def index
     @events = Event.all
@@ -12,7 +11,7 @@ class EventsController < ApplicationController
 
   def attend
     @event.attendees << current_user
-    redirect_to events_path
+    redirect_to users_path
   end
 
   # GET /events/1 or /events/1.json
@@ -35,7 +34,7 @@ class EventsController < ApplicationController
       attend
       flash[:notice] = 'Event created successfully'
     else
-      'nothing'
+      render :new
     end
   end
 
@@ -48,6 +47,6 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:time, :location, :user_id, :title)
+    params.require(:event).permit(:time, :location, :user_id, :title, :email)
   end
 end

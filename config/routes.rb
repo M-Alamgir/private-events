@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  resources :events do
-    collection do
-      get :event, :as => 'event'
-    end
-  end
-  # resources :events, except: %i[destroy update edit] do member do get 'attend' end end
+  resources :events #do
+  #   collection do
+  #     get :event, :as => 'event'
+  #   end
+  # end
+  # resources :users do
+  #   collection do
+  #     get :show, :as => 'show'
+  #   end
+  # end
 
   put 'events/attend/:id', to: 'events#attend'
+  get 'users', to: 'users#show'
 
   devise_for :users
   root to: "events#index"

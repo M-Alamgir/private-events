@@ -18,4 +18,13 @@ module EventsHelper
     end
     list.html_safe
   end
+
+  def list_events(events)
+    names = ''
+    events.each do |event|
+      text = event.title
+      names << (content_tag :p, (link_to text, event))
+    end
+    names.html_safe
+  end
 end
