@@ -6,4 +6,12 @@ module EventsHelper
 			'You are Attending'
 		end
 	end
+
+	def attendee_list
+		list = ''
+		@event.attendees.each do |attendee|
+			list << attendee.email
+		end
+		list
+	end
 end
