@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field my-2">
-    <%= form.label :time, class: "pl-2 pr-12" %>
-    <%= form.date_select :time %>
+    <%= form.label :title, class: "pl-2  pr-12" %>
+    <%= form.text_field :title, class: "py-1 px-3 border-2 rounded focus:outline-none w-80" %>
   </div>
 
-  <div class="field font-mono my-2">
-    <%= form.label :location, class: "pl-2" %>
-    <%= form.text_field :location, class: "py-1 px-3 border-2 rounded focus:outline-none" %>
+  <div class="field my-2">
+    <%= form.label :location, class: "pl-2  pr-5" %>
+    <%= form.text_field :location, class: "py-1 px-3 border-2 rounded focus:outline-none w-40" %>
+  </div>
+
+  <div class="field my-2 mb-4">
+    <%= form.label :time, class: "pl-2 pr-12" %>
+    <%= form.date_select :time %>
   </div>
 
   <div class="actions pl-2">

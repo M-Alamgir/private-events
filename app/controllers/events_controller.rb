@@ -12,7 +12,7 @@ class EventsController < ApplicationController
 
   def attend
     @event.attendees << current_user
-    redirect_to event_events_path
+    redirect_to events_path
   end
 
   # GET /events/1 or /events/1.json
@@ -61,6 +61,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:time, :location, :user_id)
+      params.require(:event).permit(:time, :location, :user_id, :title)
     end
 end

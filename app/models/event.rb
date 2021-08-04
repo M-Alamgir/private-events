@@ -11,4 +11,8 @@ class Event < ApplicationRecord
 	def self.past_events
 		where('time < ?', Date.today)
 	end
+
+	validates :title, presence: true
+	validates :time, presence: true
+	validates :location, presence: true
 end
