@@ -10,8 +10,8 @@ module EventsHelper
 	def attendee_list
 		list = ''
 		@event.attendees.each do |attendee|
-			list << attendee.email
+			list << attendee.email[/[^@]+/]+ "<br>"
 		end
-		list
+		list.html_safe
 	end
 end
