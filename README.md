@@ -46,7 +46,7 @@ rails console
 `http://127.0.0.1:3000/`
 ![screenshot](app/assets/images/img-8.png)
 
-### My hosted events
+### My hosted events 
 
 `http://127.0.0.1:3000/users`
 ![screenshot](app/assets/images/img-9.png)
@@ -68,6 +68,15 @@ rails console
 ## Rails version
 
     Rails 6.1.3.1
+
+### Run Rspec test cases:
+
+```bash
+    1: Navigate to projects root folder
+    2: rspec spec/File_Name.rb
+example:
+    rspec spec/event_spec.rb
+```
 
 👤 **Alamgir**
 

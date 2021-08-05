@@ -14,7 +14,7 @@
             Future events
           </td>
         </tr>
-        <% @events.future_events.each do |event| %>
+        <% @upcoming_events.each do |event| %>
           <tr class="border-b border-gray-400 bg-gray-100 font-mono">
             <td class="px-2"><%= event.title %></td>
             <td class="px-10"><%= event.time %></td>
@@ -27,7 +27,7 @@
             Past events
           </td>
         </tr>
-        <% @events.past_events.each do |event| %>
+        <% @past_events.each do |event| %>
           <tr class="border-b border-gray-400 bg-gray-100 font-mono">
             <td class="px-2"><%= event.title %></td>
             <td class="px-10"><%= event.time %></td>

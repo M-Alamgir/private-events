@@ -12,7 +12,7 @@
 	        </tr>
 	      </thead>
 	      <tbody>
-	        <% @user.created_events.each do |event| %>
+	        <% @created_events.each do |event| %>
 	          <tr class="border-b border-gray-400 bg-gray-100 font-mono">
 	            <td class="px-2"><%= event.title %></td>
 	            <td class="px-10"><%= event.time %></td>
@@ -32,7 +32,7 @@
         		Future events
         	</td>
         </tr>
-        <% @user.attend_events.future_events.each do |event| %>
+        <% @upcoming_events.each do |event| %>
           <tr class="border-b border-gray-400 bg-gray-100 font-mono">
             <td class="px-2"><%= event.title %></td>
             <td class="px-6"><%= event.time %></td>
@@ -45,7 +45,7 @@
         		past events
         	</td>
         </tr>
-        <% @user.attend_events.past_events.each do |event| %>
+        <% @past_events.each do |event| %>
           <tr class="border-b border-gray-400 bg-gray-100 font-mono">
             <td class="px-2"><%= event.title %></td>
             <td class="px-6"><%= event.time %></td>
