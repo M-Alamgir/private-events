@@ -7,10 +7,50 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="font-IBM-PLEX bg-gradient-to-r from-indigo-400 to-blue-500">
+    <nav class="bg-gray-100">
+      <div class="max-w-7xl mx-auto flex justify-between">
+        <div class="flex">
+          <div class="flex items-center mr-2">
+            <a href="<%= root_path %>" class="py-5 px-1">
+              <svg class="w-6 h-6 text-blue-400" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </a>
+            <a href="<%= root_path %>"><span class="font-bold text-gray-700 hover:text-gray-400 cursor-pointer">Private Events</span></a>
+          </div>
+          <div class="flex items-center text-gray-600">
+            <a href="<%= new_event_path %>" class="py-5 px-4 hover:text-gray-400">Create event</a>
+            <a href="<%= users_path %>" class="py-5 px-4 hover:text-gray-400">My events</a>
+            <a href="<%= root_path %>" class="py-5 px-4 hover:text-gray-400">All events</a>
+          </div>
+        </div>
+        <% if !user_signed_in? %>
+        <div class="flex items-center">
+          <a href="<%= new_user_session_path %>" class="py-5 px-3 text-gray-600">Login</a>
+          <a href="<%= new_user_registration_path %>" class="py-2 px-3 bg-yellow-500 hover:bg-yellow-300 rounded">Signup</a>
+        </div>
+        <% else %>
+        <div class="flex items-center list-none">
+          <ul>
+          <li><%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "py-2 px-3 bg-yellow-500 hover:bg-yellow-300 rounded" %></li>  
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </nav>
+    <div class="max-w-7xl mt-4 rounded mx-auto flex justify-center items-center bg-green-400">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
+
   </body>
 </html>

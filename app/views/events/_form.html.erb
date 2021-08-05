@@ -1,0 +1,32 @@
+<%= form_with(model: event) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field my-2">
+    <%= form.label :title, class: "pl-2  pr-12" %>
+    <%= form.text_field :title, class: "py-1 px-3 border-2 rounded focus:outline-none w-80" %>
+  </div>
+
+  <div class="field my-2">
+    <%= form.label :location, class: "pl-2  pr-5" %>
+    <%= form.text_field :location, class: "py-1 px-3 border-2 rounded focus:outline-none w-40" %>
+  </div>
+
+  <div class="field my-2 mb-4">
+    <%= form.label :time, class: "pl-2 pr-12" %>
+    <%= form.date_select :time %>
+  </div>
+
+  <div class="actions pl-2">
+    <%= form.submit %>
+  </div>
+<% end %>
