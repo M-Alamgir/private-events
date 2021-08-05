@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
 RSpec.describe Event, type: 'model' do
@@ -53,3 +54,4 @@ RSpec.describe Event, type: 'model' do
     expect(e).to_not be_valid
   end
 end
+# rubocop:enable Metrics/BlockLength
