@@ -11,11 +11,11 @@ RSpec.describe Event, type: 'model' do
       expect(@event).to respond_to(:creator)
     end
 
-  it 'has many attendances' do
+    it 'has many attendances' do
       expect(@event).to respond_to(:attendances)
     end
 
-  it 'has many attendees' do
+    it 'has many attendees' do
       expect(@event).to respond_to(:attendees)
     end
   end
