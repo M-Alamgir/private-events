@@ -44,12 +44,12 @@ rails console
 ### All Events list
 
 `http://127.0.0.1:3000/`
-![screenshot](app/assets/images/img1.png)
+![screenshot](app/assets/images/img-8.png)
 
 ### My hosted events
 
-`http://127.0.0.1:3000/events/event`
-![screenshot](app/assets/images/img2.png)
+`http://127.0.0.1:3000/users`
+![screenshot](app/assets/images/img-9.png)
 
 ### Create New event
 
